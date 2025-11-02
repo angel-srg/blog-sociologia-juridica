@@ -1,0 +1,1210 @@
+<!-- 
+Blog hecho por el estudiante Angel Samuel Resendiz Gonzalez
+Alumno de la Facultad de Derecho de la UNAM para la materia de Sociologia Juridica
+Queda prohibida cualquier copia o distribucion no autorizada 
+-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis Cualitativo | Sociología Jurídica UNAM</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-dark: #0f2040;
+            --secondary: #8c7851;
+            --accent: #c5a158;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --dark: #343a40;
+            --border: #e0e0e0;
+            --shadow: 0 5px 15px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: var(--dark);
+            background-color: #f5f7fa;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 1.2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            background-color: var(--accent);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-icon i {
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            margin-bottom: 0;
+            color: white;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-top: -5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            padding: 5px 0;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent);
+        }
+
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(15, 32, 64, 0.9)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%231a365d"/><path d="M0 0L100 100M100 0L0 100" stroke="%23c5a158" stroke-width="1"/></svg>');
+            background-size: cover;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 40px;
+            margin: 40px 0;
+        }
+
+        /* Blog Content */
+        .blog-content {
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .blog-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .blog-header h2 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-header p {
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        .posts-container {
+            padding: 0;
+        }
+
+        .post {
+            padding: 2.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .post:hover {
+            background-color: #fafbfc;
+        }
+
+        .post:last-child {
+            border-bottom: none;
+        }
+
+        .post-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-icon {
+            background-color: var(--light);
+            color: var(--primary);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px solid var(--border);
+        }
+
+        .post-icon i {
+            font-size: 1.2rem;
+        }
+
+        .post-title h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .post-meta {
+            display: flex;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .post-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .post-content h4 {
+            color: var(--primary-dark);
+            margin: 1.5rem 0 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .post-content p, .post-content li {
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .post-content ul, .post-content ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .post-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .questionnaire-box {
+            background-color: var(--light);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .widget-header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1.2rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .widget-header i {
+            color: var(--accent);
+        }
+
+        .widget-header h3 {
+            color: white;
+            margin-bottom: 0;
+            font-size: 1.1rem;
+        }
+
+        .widget-content {
+            padding: 1.5rem;
+        }
+
+        .student-info p {
+            margin-bottom: 0.8rem;
+            display: flex;
+        }
+
+        .student-info strong {
+            min-width: 120px;
+            display: inline-block;
+            color: var(--primary);
+        }
+
+        .topics-list {
+            list-style: none;
+        }
+
+        .topics-list li {
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .topics-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .topics-list i {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        .criteria-list {
+            list-style: none;
+        }
+
+        .criteria-list li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .criteria-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 3rem 0 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-section h3 i {
+            color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-links a i {
+            font-size: 0.7rem;
+            color: var(--accent);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                order: -1;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--primary-dark);
+                flex-direction: column;
+                padding: 1rem 0;
+                text-align: center;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-menu a {
+                padding: 0.8rem 1rem;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            .nav-menu a:last-child {
+                border-bottom: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .header-content {
+                position: relative;
+            }
+            
+            .post {
+                padding: 1.8rem 1.5rem;
+            }
+            
+            .hero {
+                padding: 3rem 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .post-header {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .post-meta {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .post {
+                padding: 1.5rem 1.2rem;
+            }
+            
+            .hero {
+                padding: 2.5rem 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .post-title h3 {
+                font-size: 1.2rem;
+            }
+            
+            .post-content h4 {
+                font-size: 1rem;
+            }
+            
+            .student-info p {
+                flex-direction: column;
+            }
+            
+            .student-info strong {
+                min-width: auto;
+                margin-bottom: 0.2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .post {
+                padding: 1.2rem 1rem;
+            }
+            
+            .post-icon {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .post-icon i {
+                font-size: 1rem;
+            }
+            
+            .widget-content {
+                padding: 1.2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .post {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+
+        .post:nth-child(1) { animation-delay: 0.1s; }
+        .post:nth-child(2) { animation-delay: 0.2s; }
+        .post:nth-child(3) { animation-delay: 0.3s; }
+        .post:nth-child(4) { animation-delay: 0.4s; }
+        .post:nth-child(5) { animation-delay: 0.5s; }
+        .post:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Análisis Cualitativo</h1>
+                        <p>Sociología Jurídica UNAM</p>
+                    </div>
+                </div>
+                
+                <nav class="nav-menu">
+                    <a href="#"><i class="fas fa-home"></i> Inicio</a>
+                    <a href="#"><i class="fas fa-book"></i> Entradas</a>
+                </nav>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Blog de Análisis Cualitativo en Sociología Jurídica</h2>
+            <p>Un espacio académico para el análisis de problemáticas socio-jurídicas desde la perspectiva cualitativa</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="main-layout">
+            <main class="blog-content">
+                <div class="blog-header">
+                    <h2>Entradas Recientes</h2>
+                    <p>Análisis cualitativo de la violencia intrafamiliar durante el confinamiento por COVID-19</p>
+                </div>
+                
+                <div class="posts-container">
+                    <article class="post">
+                        <div class="post-header">
+                            <div class="post-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="post-title">
+                                <h3>Introducción y Justificación</h3>
+                                <div class="post-meta">
+                                    <span><i class="far fa-calendar"></i> 28 Octubre, 2025</span>
+                                    <span><i class="far fa-folder"></i> Introducción</span>
+                                    <span><i class="far fa-clock"></i> 5 min lectura</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <p>En el marco de la Unidad 7 de Sociología Jurídica, este blog tiene como objetivo aplicar el enfoque cualitativo para analizar una problemática socio-jurídica relevante en nuestro contexto. He seleccionado la problemática de la <strong>violencia intrafamiliar durante el confinamiento por COVID-19</strong> debido a su impacto significativo en la dinámica familiar y su relación directa con el sistema jurídico mexicano.</p>
+                            <p>Esta problemática es especialmente relevante porque durante el periodo de confinamiento, muchas familias se vieron obligadas a permanecer en espacios reducidos por largos periodos, lo que generó tensiones que en algunos casos derivaron en violencia. Como estudiante de derecho, considero fundamental comprender las causas y consecuencias de este fenómeno para poder contribuir a su prevención y solución.</p>
+                        </div>
+                    </article>
+
+                    <article class="post">
+                        <div class="post-header">
+                            <div class="post-icon">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                            <div class="post-title">
+                                <h3>Planteamiento del Problema</h3>
+                                <div class="post-meta">
+                                    <span><i class="far fa-calendar"></i> 28 Octubre, 2025</span>
+                                    <span><i class="far fa-folder"></i> Análisis</span>
+                                    <span><i class="far fa-clock"></i> 8 min lectura</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <h4>Violencia Intrafamiliar Durante el Confinamiento por COVID-19</h4>
+                            <p>La pandemia de COVID-19 y las medidas de confinamiento implementadas para contenerla generaron un aumento significativo en los casos de violencia intrafamiliar. Según datos del INEGI, durante 2021 se registró un incremento en las llamadas de emergencia relacionadas con violencia familiar. 
+                                <br>
+                                <br>Instituto Nacional de Estadística y Geografía. (2022). Encuesta Nacional sobre la Dinámica de las Relaciones en los Hogares (ENDIREH) 2021 [Comunicado de prensa núm. 485/22]. https://www.inegi.org.mx/contenidos/saladeprensa/boletines/2022/endireh/Endireh2021_Nal.pdf</p>
+                            <h4>Factores que la originan:</h4>
+                            <ul>
+                                <li>Estrés económico por pérdida de empleos o reducción de ingresos</li>
+                                <li>Convivencia forzada en espacios reducidos</li>
+                                <li>Ansiedad e incertidumbre sobre la situación sanitaria</li>
+                                <li>Dificultad para acceder a redes de apoyo externas</li>
+                            </ul>
+                            <h4>Percepción de las personas:</h4>
+                            <p>Muchas víctimas consideran que la violencia es "un problema privado" o temen denunciar por las posibles consecuencias familiares y sociales. Además, existe la percepción de que las autoridades no responden adecuadamente a estas situaciones.</p>
+                            <h4>Impacto en las relaciones cotidianas:</h4>
+                            <p>La violencia intrafamiliar genera un ambiente de temor y desconfianza que afecta la dinámica familiar, el desarrollo emocional de los niños y la salud mental de todos los miembros de la familia.</p>
+                        </div>
+                    </article>
+
+                    <article class="post">
+                        <div class="post-header">
+                            <div class="post-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="post-title">
+                                <h3>Hipótesis</h3>
+                                <div class="post-meta">
+                                    <span><i class="far fa-calendar"></i> 28 Octubre, 2025</span>
+                                    <span><i class="far fa-folder"></i> Investigación</span>
+                                    <span><i class="far fa-clock"></i> 6 min lectura</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <p>Considero que las posibles soluciones para abordar la problemática de violencia intrafamiliar durante el confinamiento por COVID-19 podrían implementarse a nivel jurídico y social:</p>
+                            <h4>A nivel jurídico:</h4>
+                            <ul>
+                                <li>Fortalecimiento de los mecanismos de denuncia virtual y telefónica</li>
+                                <li>Creación de protocolos de actuación policial específicos para situaciones de confinamiento</li>
+                                <li>Establecimiento de medidas de protección inmediatas que no requieran la salida del hogar de la víctima</li>
+                            </ul>
+                            <h4>A nivel social:</h4>
+                            <ul>
+                                <li>Implementación de campañas de concientización sobre la violencia intrafamiliar</li>
+                                <li>Creación de redes de apoyo comunitario para familias en situación de riesgo</li>
+                                <li>Desarrollo de programas de salud mental accesibles para toda la población</li>
+                            </ul>
+                        </div>
+                    </article>
+
+<article class="post">
+    <div class="post-header">
+        <div class="post-icon">
+            <i class="fas fa-clipboard-list"></i>
+        </div>
+        <div class="post-title">
+            <h3>Fuente Primaria: Encuesta</h3>
+            <div class="post-meta">
+                <span><i class="far fa-calendar"></i> 28 Octubre, 2025</span>
+                <span><i class="far fa-folder"></i> Metodología</span>
+                <span><i class="far fa-clock"></i> 7 min lectura</span>
+            </div>
+        </div>
+    </div>
+    <div class="post-content">
+        <p>Para recopilar información sobre la percepción de la comunidad respecto a la violencia intrafamiliar durante el confinamiento, diseñé y apliqué una encuesta a 50 personas de mi comunidad. El procedimiento fue el siguiente:</p>
+        <ol>
+            <li>Diseñé un cuestionario con 10 preguntas sobre experiencias y percepciones relacionadas con la violencia intrafamiliar durante el confinamiento</li>
+            <li>Distribuí el cuestionario de forma digital a través de redes sociales y grupos de WhatsApp</li>
+            <li>Recopilé las respuestas durante un periodo de una semana</li>
+            <li>Analicé los datos obtenidos utilizando métodos cualitativos, identificando patrones y temas recurrentes</li>
+        </ol>
+        
+        <h4>Resultados principales:</h4>
+        
+        <!-- Gráfica de resultados RESPONSIVE -->
+        <div class="chart-container" style="margin: 25px 0; background: white; border-radius: 8px; padding: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); overflow: hidden;">
+            <h4 style="text-align: center; color: #1a365d; margin-bottom: 25px; border-bottom: 2px solid #c5a158; padding-bottom: 10px; font-size: 1.2rem;">Visualización de Resultados</h4>
+            
+            <div class="chart" style="display: flex; flex-direction: column; gap: 20px;">
+                
+                <!-- Barra 1 -->
+                <div class="bar-container" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px;">
+                    <div class="bar-info" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="bar-label" style="font-size: 0.9rem; color: #1a365d; font-weight: 500; flex: 1;">
+                            Conoce casos de violencia intrafamiliar
+                        </div>
+                        <div class="percentage-mobile" style="font-weight: bold; color: #1a365d; min-width: 45px; text-align: right; font-size: 0.9rem;">
+                            68%
+                        </div>
+                    </div>
+                    <div class="bar-wrapper" style="width: 100%; height: 30px; background-color: #e9ecef; border-radius: 6px; overflow: hidden; position: relative;">
+                        <div class="bar" data-percentage="68" style="height: 100%; background: linear-gradient(90deg, #1a365d, #2d4d85); border-radius: 6px; width: 0%; display: flex; align-items: center; justify-content: flex-end; padding-right: 12px; color: white; font-weight: bold; font-size: 0.85rem; transition: width 1.5s ease-out; box-shadow: 2px 0 8px rgba(0,0,0,0.15);">
+                            <span class="bar-text" style="display: none;">68%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Barra 2 -->
+                <div class="bar-container" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px;">
+                    <div class="bar-info" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="bar-label" style="font-size: 0.9rem; color: #1a365d; font-weight: 500; flex: 1;">
+                            Autoridades no preparadas
+                        </div>
+                        <div class="percentage-mobile" style="font-weight: bold; color: #1a365d; min-width: 45px; text-align: right; font-size: 0.9rem;">
+                            42%
+                        </div>
+                    </div>
+                    <div class="bar-wrapper" style="width: 100%; height: 30px; background-color: #e9ecef; border-radius: 6px; overflow: hidden; position: relative;">
+                        <div class="bar" data-percentage="42" style="height: 100%; background: linear-gradient(90deg, #1a365d, #2d4d85); border-radius: 6px; width: 0%; display: flex; align-items: center; justify-content: flex-end; padding-right: 12px; color: white; font-weight: bold; font-size: 0.85rem; transition: width 1.5s ease-out; box-shadow: 2px 0 8px rgba(0,0,0,0.15);">
+                            <span class="bar-text" style="display: none;">42%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Barra 3 -->
+                <div class="bar-container" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px;">
+                    <div class="bar-info" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="bar-label" style="font-size: 0.9rem; color: #1a365d; font-weight: 500; flex: 1;">
+                            Necesitan más apoyo psicológico
+                        </div>
+                        <div class="percentage-mobile" style="font-weight: bold; color: #1a365d; min-width: 45px; text-align: right; font-size: 0.9rem;">
+                            75%
+                        </div>
+                    </div>
+                    <div class="bar-wrapper" style="width: 100%; height: 30px; background-color: #e9ecef; border-radius: 6px; overflow: hidden; position: relative;">
+                        <div class="bar" data-percentage="75" style="height: 100%; background: linear-gradient(90deg, #1a365d, #2d4d85); border-radius: 6px; width: 0%; display: flex; align-items: center; justify-content: flex-end; padding-right: 12px; color: white; font-weight: bold; font-size: 0.85rem; transition: width 1.5s ease-out; box-shadow: 2px 0 8px rgba(0,0,0,0.15);">
+                            <span class="bar-text" style="display: none;">75%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Barra 4 -->
+                <div class="bar-container" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px;">
+                    <div class="bar-info" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="bar-label" style="font-size: 0.9rem; color: #1a365d; font-weight: 500; flex: 1;">
+                            Sistema jurídico no protege adecuadamente
+                        </div>
+                        <div class="percentage-mobile" style="font-weight: bold; color: #1a365d; min-width: 45px; text-align: right; font-size: 0.9rem;">
+                            58%
+                        </div>
+                    </div>
+                    <div class="bar-wrapper" style="width: 100%; height: 30px; background-color: #e9ecef; border-radius: 6px; overflow: hidden; position: relative;">
+                        <div class="bar" data-percentage="58" style="height: 100%; background: linear-gradient(90deg, #1a365d, #2d4d85); border-radius: 6px; width: 0%; display: flex; align-items: center; justify-content: flex-end; padding-right: 12px; color: white; font-weight: bold; font-size: 0.85rem; transition: width 1.5s ease-out; box-shadow: 2px 0 8px rgba(0,0,0,0.15);">
+                            <span class="bar-text" style="display: none;">58%</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="chart-legend" style="display: flex; justify-content: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid #e0e0e0;">
+                <div class="legend-item" style="display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: #666;">
+                    <div class="legend-color" style="width: 16px; height: 16px; border-radius: 4px; background: linear-gradient(90deg, #1a365d, #2d4d85);"></div>
+                    <span>Porcentaje de respuestas afirmativas</span>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            /* Estilos responsivos para la gráfica */
+            @media (min-width: 768px) {
+                .bar-container {
+                    flex-direction: row !important;
+                    align-items: center !important;
+                    gap: 15px !important;
+                }
+                .bar-info {
+                    display: flex !important;
+                    justify-content: space-between !important;
+                    align-items: center !important;
+                    width: 250px !important;
+                }
+                .bar-label {
+                    min-width: 200px !important;
+                }
+                .percentage-mobile {
+                    min-width: 50px !important;
+                    text-align: right !important;
+                }
+                .bar-wrapper {
+                    flex: 1 !important;
+                    max-width: 400px !important;
+                }
+                .bar-text {
+                    display: inline !important;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .chart-container {
+                    padding: 15px !important;
+                    margin: 20px 0 !important;
+                }
+                .bar-label {
+                    font-size: 0.85rem !important;
+                    line-height: 1.3 !important;
+                }
+                .bar-wrapper {
+                    height: 25px !important;
+                }
+                .percentage-mobile {
+                    font-size: 0.85rem !important;
+                    min-width: 40px !important;
+                }
+            }
+            
+            @media (max-width: 360px) {
+                .bar-label {
+                    font-size: 0.8rem !important;
+                }
+                .percentage-mobile {
+                    font-size: 0.8rem !important;
+                }
+                .legend-item span {
+                    font-size: 0.8rem !important;
+                }
+            }
+        </style>
+
+        <div class="questionnaire-box">
+            <h4>Diseño del Cuestionario:</h4>
+            <p><strong>CUESTIONARIO SOBRE VIOLENCIA INTRAFAMILIAR DURANTE EL CONFINAMIENTO</strong></p>
+            <p>1. ¿Conoce algún caso de violencia intrafamiliar que haya ocurrido durante el confinamiento por COVID-19?</p>
+            <p>2. En su opinión, ¿las medidas de confinamiento aumentaron la violencia intrafamiliar?</p>
+            <p>3. ¿Cree que las autoridades estaban preparadas para atender esta problemática?</p>
+            <p>4. ¿Considera que las víctimas de violencia intrafamiliar tuvieron dificultades para buscar ayuda durante el confinamiento?</p>
+            <p>5. ¿Qué tipo de apoyo cree que fue más necesario para las familias durante este periodo?</p>
+            <p>6. ¿Cree que el sistema jurídico actual protege adecuadamente a las víctimas de violencia intrafamiliar?</p>
+            <p>7. ¿Qué medidas considera más urgentes para prevenir la violencia intrafamiliar en situaciones de crisis?</p>
+            <p>8. ¿Ha observado cambios en la dinámica familiar en su comunidad durante el confinamiento?</p>
+            <p>9. ¿Cree que la violencia intrafamiliar es percibida como "un problema privado" en nuestra sociedad?</p>
+            <p>10. ¿Qué recursos de apoyo considera que faltaron durante el confinamiento para atender esta problemática?</p>
+        </div>
+    </div>
+    
+    <script>
+        // Animación para las barras de la gráfica
+        document.addEventListener('DOMContentLoaded', function() {
+            const bars = document.querySelectorAll('.bar');
+            
+            bars.forEach((bar, index) => {
+                const percentage = bar.getAttribute('data-percentage');
+                setTimeout(() => {
+                    bar.style.width = percentage + '%';
+                    // Mostrar texto en barras grandes (solo en desktop)
+                    if (window.innerWidth >= 768) {
+                        const barText = bar.querySelector('.bar-text');
+                        if (barText) {
+                            barText.style.display = 'inline';
+                        }
+                    }
+                }, 300 + (index * 200));
+            });
+            
+            // Recalcular en redimensionamiento
+            window.addEventListener('resize', function() {
+                bars.forEach(bar => {
+                    const barText = bar.querySelector('.bar-text');
+                    if (barText) {
+                        barText.style.display = window.innerWidth >= 768 ? 'inline' : 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</article>
+
+                    <article class="post">
+                        <div class="post-header">
+                            <div class="post-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="post-title">
+                                <h3>Fuente Secundaria: Investigación Documental</h3>
+                                <div class="post-meta">
+                                    <span><i class="far fa-calendar"></i> 28 Octubre, 2025</span>
+                                    <span><i class="far fa-folder"></i> Fuentes</span>
+                                    <span><i class="far fa-clock"></i> 6 min lectura</span>
+                                </div>
+                            </div>
+                        </div>
+                       <div class="post-content">
+    <p>Consulté diversas bases de datos y organismos nacionales e internacionales para recopilar información sobre estudios cualitativos relacionados con la violencia intrafamiliar durante la pandemia. Las fuentes principales fueron:</p>
+    
+    <div class="references-container">
+        <div class="reference-item">
+            <div class="reference-icon">
+                <i class="fas fa-chart-bar"></i>
+            </div>
+            <div class="reference-content">
+                <strong>CONAPO - Estudios sobre dinámica familiar en contextos de crisis</strong>
+                <p>Consejo Nacional de Población. (s.f.). <em>Capítulo VI. Las transformaciones y retos que enfrenta la familia en México</em>. Gobierno de México. Recuperado el 30 de octubre de 2025, de http://www.conapo.gob.mx/work/models/CONAPO/Resource/205/1/images/Cap06.pdf</p>
+            </div>
+        </div>
+        
+        <div class="reference-item">
+            <div class="reference-icon">
+                <i class="fas fa-globe-americas"></i>
+            </div>
+            <div class="reference-content">
+                <strong>OCDE - Informes sobre políticas públicas para la protección familiar</strong>
+                <p>Organización para la Cooperación y el Desarrollo Económicos. (2012). <em>Haciendo lo mejor para las familias</em>. CIEDESS. (Trabajo original publicado en 2011). https://www.oecd.org/content/dam/oecd/es/publications/reports/2011/04/doing-better-for-families_g1g12dd6/9789264190474-es.pdf</p>
+            </div>
+        </div>
+        
+        <div class="reference-item">
+            <div class="reference-icon">
+                <i class="fas fa-university"></i>
+            </div>
+            <div class="reference-content">
+                <strong>UNAM - Investigaciones sobre salud mental y violencia en el confinamiento</strong>
+                <p>Robles Mendoza, A. L., Martínez Pérez, V. M., & López Sánchez, O. (2022). <em>Estudio exploratorio sobre emociones y violencia durante el confinamiento social por COVID-19 en estudiantes universitarios</em>. Trabajo Social UNAM, (27-28), 37–49. Recuperado de https://www.revistas.unam.mx/index.php/ents/article/view/82203</p>
+            </div>
+        </div>
+    </div>
+
+    <h4>Conclusiones a partir de la revisión documental:</h4>
+    <ol>
+        <li>La violencia intrafamiliar durante el confinamiento presenta características específicas relacionadas con el estrés prolongado y la falta de espacios de escape</li>
+        <li>Las víctimas enfrentaron barreras adicionales para buscar ayuda debido a las restricciones de movilidad</li>
+        <li>Los sistemas de justicia mostraron limitaciones significativas para adaptarse a la nueva realidad</li>
+        <li>Se evidenció la necesidad de políticas públicas integrales que aborden tanto la prevención como la atención de la violencia intrafamiliar en contextos de crisis</li>
+    </ol>
+</div>
+
+<style>
+.references-container {
+    margin: 20px 0;
+}
+
+.reference-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #2c3e50;
+}
+
+.reference-icon {
+    font-size: 20px;
+    margin-right: 15px;
+    min-width: 30px;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.reference-content {
+    flex: 1;
+}
+
+.reference-content strong {
+    color: #2c3e50;
+    font-size: 1.1em;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.reference-content p {
+    margin: 0;
+    line-height: 1.5;
+    color: #555;
+    font-size: 0.95em;
+}
+</style>
+                    </article>
+
+                    <article class="post">
+                        <div class="post-header">
+                            <div class="post-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="post-title">
+                                <h3>Propuesta</h3>
+                                <div class="post-meta">
+                                    <span><i class="far fa-calendar"></i> 28 Octubre, 2025</span>
+                                    <span><i class="far fa-folder"></i> Soluciones</span>
+                                    <span><i class="far fa-clock"></i> 7 min lectura</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="post-content">
+                            <p>A partir de los datos obtenidos en mi investigación, propongo la implementación de un <strong>Programa Integral de Prevención y Atención de la Violencia Intrafamiliar en Contextos de Crisis</strong>, que incluiría los siguientes componentes:</p>
+                            <h4>Modificaciones legales:</h4>
+                            <ul>
+                                <li>Reforma a la Ley General de Acceso de las Mujeres a una Vida Libre de Violencia para incluir protocolos específicos para situaciones de confinamiento o emergencia sanitaria</li>
+                                <li>Creación de una figura jurídica de "alerta temprana" que permita la intervención preventiva en familias identificadas en situación de riesgo</li>
+                            </ul>
+                            <h4>Cambios institucionales:</h4>
+                            <ul>
+                                <li>Establecimiento de una línea de atención 24/7 especializada en violencia intrafamiliar durante crisis</li>
+                                <li>Capacitación específica para policías y ministerios públicos sobre la atención de violencia intrafamiliar en contextos de confinamiento</li>
+                            </ul>
+                            <h4>Transformaciones sociales:</h4>
+                            <ul>
+                                <li>Implementación de campañas educativas sobre resolución pacífica de conflictos familiares</li>
+                                <li>Creación de redes de apoyo comunitario que puedan detectar y apoyar a familias en situación de riesgo</li>
+                                <li>Desarrollo de programas de salud mental accesibles para toda la población</li>
+                            </ul>
+                            <p>Esta propuesta busca abordar la problemática de manera integral, combinando aspectos jurídicos, institucionales y sociales para generar un cambio real en la realidad de las familias mexicanas.</p>
+                        </div>
+                    </article>
+                </div>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-widget">
+                    <div class="widget-header">
+                        <i class="fas fa-user-graduate"></i>
+                        <h3>Datos del Estudiante</h3>
+                    </div>
+                    <div class="widget-content student-info">
+                        <p><strong>Nombre:</strong> Ángel Samuel Reséndiz González</p>
+                        <p><strong>Carrera:</strong> Licenciatura en Derecho</p>
+                        <p><strong>Grupo:</strong> 8105D</p>
+                        <p><strong>No. de cuenta:</strong> 42603696-4</p>
+                        <p><strong>Asesora:</strong> Andrea Enriquez Perea Torijano</p>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <div class="widget-header">
+                        <i class="fas fa-book-open"></i>
+                        <h3>Unidad 7</h3>
+                    </div>
+                    <div class="widget-content">
+                        <ul class="topics-list">
+                            <li><i class="fas fa-chevron-right"></i> Análisis Cuantitativo y Cualitativo</li>
+                            <li><i class="fas fa-chevron-right"></i> Metodología de investigación</li>
+                            <li><i class="fas fa-chevron-right"></i> Fuentes de información</li>
+                            <li><i class="fas fa-chevron-right"></i> Procesamiento de datos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <div class="widget-header">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Criterios de Evaluación</h3>
+                    </div>
+                    <div class="widget-content">
+                        <ul class="criteria-list">
+                            <li>Formato y estructura</li>
+                            <li>Elementos del blog</li>
+                            <li>Contenido y estudio minucioso</li>
+                            <li>Confrontación teoría-práctica</li>
+                            <li>Conclusión y respuesta al objetivo</li>
+                            <li>Redacción y ortografía</li>
+                            <li>Fuentes de consulta</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-graduation-cap"></i> Universidad</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-chevron-right"></i> Universidad Nacional Autónoma de México</a></li>
+                        <li><i class="fas fa-chevron-right"></i> Facultad de Derecho</a></li>
+                        <li><i class="fas fa-chevron-right"></i> Sociología Jurídica</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3><i class="fas fa-book"></i> Otras Fuentes de Consulta</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-chevron-right"></i> Baena Paz, Guillermina (2017). Metodología de la investigación</a></li>
+                        <li><i class="fas fa-chevron-right"></i> Clavijo Cáceres, Darwin et al. (2014). Método, Metodología y Técnicas de investigación aplicadas al Derecho</a></li>
+                        <li><i class="fas fa-chevron-right"></i> Corbetta, Piergiorgio (2007). Metodología y Técnicas de Investigación Social</a></li>
+                        <li><i class="fas fa-chevron-right"></i> Hernandez Bata, Arturo (2012). Sociología General y Jurídica</a></li>
+                        <li><i class="fas fa-chevron-right"></i> Hernández Sampieri, Roberto (2014). Metodología de la Investigación</a></li>
+                        <li><i class="fas fa-chevron-right"></i> Reyes Corona, Mauricio (2016). Metodología de la investigación</a></li>
+                        <li><i class="fas fa-chevron-right"></i> Rojas Soriano, Raúl (2013). Guía para realizar Investigaciones Sociales</a></li>
+                        <li><i class="fas fa-chevron-right"></i> Villlabella Armengol, Carlos Manuel (2015). Los métodos en la investigación jurídica</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3><i class="fas fa-newspaper"></i> Revistas Consultadas</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-chevron-right"></i> Bautista López, Elizabeth (2009). La investigación cualitativa y cuantitativa en trabajo social</a></li>
+                        <li><i class="fas fa-chevron-right"></i> Canal Díaz, Neus (1999). Técnicas de muestreo. Sesgos más frecuentes</a></li>
+                        <li><i class="fas fa-chevron-right"></i> González Galván, Jorge Alberto (1997). El protocolo de investigación jurídica</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Blog de Análisis Cualitativo - Sociología Jurídica UNAM. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const navMenu = document.querySelector('.nav-menu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (window.innerWidth <= 768 && 
+                !navMenu.contains(event.target) && 
+                !menuBtn.contains(event.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+        
+        // Adjust menu for window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                document.querySelector('.nav-menu').classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
